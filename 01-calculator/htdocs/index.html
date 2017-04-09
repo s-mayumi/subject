@@ -5,14 +5,46 @@
 <title>Calculator</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
 <body>
 
-<p>テスト</p>
+<main class="main">
+
+<div name="calc" class="calc">
+    <div class="output"><input class="js-output" type="text" value="0"></div>
+    <form name="calc-input" class="calcInput">
+      <ul class="calcInput-list">
+        <li><input type="button" value="/"></li>
+        <li><input type="button" value="*"></li>
+        <li><input type="button" value=""></li>
+        <li><input class="js-clear" type="button" value="C"></li>
+        <li><input class="js-input-num" type="button" value="7"></li>
+        <li><input class="js-input-num" type="button" value="8"></li>
+        <li><input class="js-input-num" type="button" value="9"></li>
+        <li><input type="button" value="-"></li>
+        <li><input class="js-input-num" type="button" value="4"></li>
+        <li><input class="js-input-num" type="button" value="5"></li>
+        <li><input class="js-input-num" type="button" value="6"></li>
+        <li><input type="button" value="+"></li>
+        <li><input class="js-input-num" type="button" value="1"></li>
+        <li><input class="js-input-num" type="button" value="2"></li>
+        <li><input class="js-input-num" type="button" value="3"></li>
+        <li><input type="button" value="="></li>
+        <li><input class="js-input-num" type="button" value="0"></li>
+        <li><input class="js-input-num" type="button" value="00"></li>
+        <li><input type="button" value="."></li>
+        <li><input type="button" value="="></li>
+      </ul>
+    </form>
+</div>
+
+</main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script>window.jQuery || document.write( '<script src="./js/lib/jquery-2.1.4.min.js"><\/script>' );</script>
-<script src="./js/common.js"></script>
+<script>window.jQuery || document.write( '<script src="./assets/js/lib/jquery-2.1.4.min.js"><\/script>' );</script>
+<script src="./assets/js/calculator.js"></script>
 
 </body>
 </html>

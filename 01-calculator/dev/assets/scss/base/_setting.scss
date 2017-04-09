@@ -6,12 +6,11 @@ html {
   font-size: 62.5%;
 }
 body, input, button, select, textarea {
-  font-family: $font-gothic-y;
+  font-family: $font-gothic;
 }
 body {
-  background: $color-main;
   color: $color-font;
-  text-align: center;
+  text-align: left;
   line-height:1.7;
   font-size: 1.4rem;
 
@@ -33,6 +32,18 @@ h1 , h2 , h3 , h4 , h5 , h6 {
 }
 h1 {
   font-weight: normal;
+}
+// フォーム要素のデフォルトスタイルを削除
+input, button, textarea, select {
+    // -webkit-appearance: none;  // iOSのSafariはクセが強いのでデフォルトで削除
+    // -moz-appearance: none;
+    // appearance: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
 }
 img {
   vertical-align: top;  // imgで意図しないマージンがつかないように設定

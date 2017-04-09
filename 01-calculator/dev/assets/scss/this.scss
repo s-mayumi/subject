@@ -1,0 +1,35 @@
+/*--------------------------------------
+  Calculator Css
+--------------------------------------*/
+
+// layout
+main {
+  max-width: 640px;
+  padding: 10px;
+}
+
+
+// Calc style
+.calcInput {
+  margin-left: -3px;
+  margin-right: -3px;
+}
+
+.calcInput-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; //全てのアイテム等間隔
+  align-items: center; //垂直中央
+  li {
+    width: 25%;
+    text-align: center;
+    padding: 3px;
+  }
+}
+
+
+input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
