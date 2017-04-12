@@ -1,38 +1,48 @@
+
+
 $(function() {
-  // var numArray = [];
-  var output    = $('.js-output');
-  var outputVal = $('.js-output').val();
-  var inputNum  = $('.js-input-num');
-  var clear     = $('.js-clear');
+  var output      = $('.js-output');
+  var inputNum    = $('.js-input-num');
+  var buttonPlus  = $('.js-plus');
+  var buttonClear = $('.js-clear');
+  var outputResult;
+  var valKeep;
+  var flag;
+
 
   //値の選択
   inputNum.on('click', function() {
-    $(this).each(function() {
-      // console.log($(this).val());
 
-      var getNum = $(this).val();
+    if ( flag ){ //flagがあればoutputのval値を0にしてflugを無効化する
+      output.val(0);
+      flag = null;
+    }
 
-      console.log(getNum);
+    var outputVal = output.val(); //現在のoutputのval値
+    var getNum = $(this).val();   //選択したval値
 
-      if( outputVal === 0 ){
-        // console.log(outputVal);
-        output.val(outputVal);
-      } else {
-        console.log(outputVal);
-        output.val(outputVal += getNum);
-      }
-    });
+    if( outputVal == 0 ){
+      outputResult = getNum;
+    } else {
+      outputResult = outputVal += getNum;
+    }
+
+    output.val(outputResult); //結果のval値
   });
 
 
-
-
-
-
+  //加算
+  buttonPlus.on('click', function() {
+    valKeep = outputResult;
+    flag = '+';
+    console.log(valKeep);
+  });
 
 
   //値をクリア
-  clear.on('click', function() {
-    output.val('0');
+  buttonClear.on('click', function() {
+    output.val(0);
   });
 });
+
+
