@@ -1,84 +1,80 @@
+$(function(){
+  var output         = $('.js-output');    //表示エリア
+  var inputNum       = $('.js-input-num'); //数値
+  var buttonPlus     = $('.js-plus');      //プラス
+  var buttonMinus    = $('.js-minus');     //マイナス
+  var buttonMultiply = $('.js-multiply');  //乗算
+  var buttonDivision = $('.js-division');  //除算
+  var buttonEqual    = $('.js-equal');     //イコール
+  var buttonClear    = $('.js-clear');     //クリア
+  var valResult      = 0;                  //結果
+  var keepNum        = 0;                  //flagがたった時の代入先
+  var keepNumTotal   = 0;                  //最終結果
+  var flag;
 
-
-$(function() {
-  var output      = $('.js-output');
-  var inputNum    = $('.js-input-num');
-  var buttonPlus  = $('.js-plus');
-  var buttonMinus = $('.js-minus');
-  var buttonEqual = $('.js-equal');
-  var buttonClear = $('.js-clear');
-  var outputResult;
-  // var valKeep; //これがないと36行目がグローバル変数になってしまう
-  var valKeep = 0;
-  var valKeepTotal = 0;
-  var flag; //これがないと37行目がグローバル変数になってしまう
-
-
-  //値の選択
   inputNum.on('click', function(){
+    var getNum = $(this).val(); //押された数字の値を getNum に代入
 
-    if ( flag ){ //flagがあればoutputの値を0にしてflugを無効化する
+    if( flag ){
       output.val(0);
-      flag = null;
     }
 
-    var outputVal = output.val(); //現在のoutputの値
-    var getNum = $(this).val();   //選択した値
-
-    if( outputVal == 0 ){
-      outputResult = getNum;
-      outputResult = parseInt(outputResult);
-    } else {
-      outputResult = outputVal += getNum;
-      outputResult = parseInt(outputResult);
-    }
-
-    output.val(outputResult); //入力した結果の値
+    valResult = parseInt(getNum);
+    output.val(valResult);
   });
 
-
-  //加算
   buttonPlus.on('click', function(){
-    // valKeep = outputResult; //valKeepに現在の値を代入する
-    flag = '+'; //+というflugを立てる
-
-    if( valKeep == 0 ){
-      valKeep = outputResult; //valKeepに現在の値を代入する
-    } else {
-      valKeepTotal = valKeep += outputResult;
-    }
-    // console.log(valKeep);
-    console.log(valKeepTotal);
+    flag = '+'; //+のflagたてる
+    keepNum = parseInt(valResult); //数字を押した時の値を keepNum に代入
+    console.log(flag);
+    console.log(keepNum);
   });
 
-  //減算
   buttonMinus.on('click', function(){
-    flag = '-'; //-というflugを立てる
+    flag = '-'; //-のflagたてる
+    keepNum = parseInt(valResult); //数字を押した時の値を keepNum に代入
+    console.log(flag);
+    console.log(keepNum);
+  });
 
-    if( valKeep == 0 ){
-      valKeep = outputResult; //valKeepに現在の値を代入する
-    } else {
-      valKeepTotal = valKeep - outputResult;
+  buttonMinus.on('click', function(){
+    flag = '-'; //-のflagたてる
+    keepNum = parseInt(valResult); //数字を押した時の値を keepNum に代入
+    console.log(flag);
+    console.log(keepNum);
+  });
+
+  buttonMultiply.on('click', function(){
+    flag = '*' //*のflagたてる
+    keepNum = parseInt(valResult); //数字を押した時の値を keepNum に代入
+    console.log(flag);
+    console.log(keepNum);
+  });
+
+  buttonDivision.on('click', function(){
+    flag = '/' // /のflagたてる
+    keepNum = parseInt(valResult); //数字を押した時の値を keepNum に代入
+    console.log(flag);
+    console.log(keepNum);
+  });
+
+  buttonEqual.on('click',function(){
+    if( flag == '+' ){
+      keepNumTotal = keepNum += valResult;
+    } else if( flag == '-' ){
+      keepNumTotal = keepNum -= valResult;
+    } else if( flag == '*' ){
+      keepNumTotal = keepNum *= valResult;
+    } else if( flag == '/' ){
+      keepNumTotal = keepNum /= valResult;
     }
-
-    console.log(valKeep);
-    console.log(valKeepTotal);
+    output.val(keepNumTotal);
   });
 
-  //合計
-  buttonEqual.on('click', function(){
-    // output.val(valKeep);
-    output.val(valKeepTotal + outputResult);
-  });
-
-  //値をクリア
   buttonClear.on('click', function(){
-    output.val(0);    //表示を0にする
-    valKeep = 0;
-    outputResult = 0; //入力結果
-    console.log(valKeep);
-    console.log(outputResult);
+    output.val(0);
+    keepNum = '0';
+    console.log(keepNum);
   });
 });
-
 
