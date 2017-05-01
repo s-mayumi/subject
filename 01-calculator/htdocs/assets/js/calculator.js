@@ -1,10 +1,7 @@
 $(function(){
   var output         = $('.js-output');    //表示エリア
   var inputNum       = $('.js-input-num'); //数値
-  var buttonPlus     = $('.js-plus');      //プラス
-  var buttonMinus    = $('.js-minus');     //マイナス
-  var buttonMultiply = $('.js-multiply');  //乗算
-  var buttonDivision = $('.js-division');  //除算
+  var buttonSymbol   = $('.js-symbol');    //記号
   var buttonEqual    = $('.js-equal');     //イコール
   var buttonClear    = $('.js-clear');     //クリア
   var valResult      = 0;                  //結果
@@ -17,45 +14,22 @@ $(function(){
 
     if( flag ){
       output.val(0);
+      // flag = null;
+      console.log(flag);
     }
 
     valResult = parseInt(getNum);
     output.val(valResult);
-  });
-
-  buttonPlus.on('click', function(){
-    flag = '+'; //+のflagたてる
-    keepNum = parseInt(valResult); //数字を押した時の値を keepNum に代入
     console.log(flag);
     console.log(keepNum);
+    console.log(valResult);
   });
 
-  buttonMinus.on('click', function(){
-    flag = '-'; //-のflagたてる
-    keepNum = parseInt(valResult); //数字を押した時の値を keepNum に代入
-    console.log(flag);
-    console.log(keepNum);
-  });
-
-  buttonMinus.on('click', function(){
-    flag = '-'; //-のflagたてる
-    keepNum = parseInt(valResult); //数字を押した時の値を keepNum に代入
-    console.log(flag);
-    console.log(keepNum);
-  });
-
-  buttonMultiply.on('click', function(){
-    flag = '*' //*のflagたてる
-    keepNum = parseInt(valResult); //数字を押した時の値を keepNum に代入
-    console.log(flag);
-    console.log(keepNum);
-  });
-
-  buttonDivision.on('click', function(){
-    flag = '/' // /のflagたてる
-    keepNum = parseInt(valResult); //数字を押した時の値を keepNum に代入
-    console.log(flag);
-    console.log(keepNum);
+  buttonSymbol.on('click', function(){
+    flag = $(this).val();
+    keepNum = parseInt(valResult); //記号を押す前の数字を keepNum に代入
+    // console.log(flag);
+    // console.log(keepNum);
   });
 
   buttonEqual.on('click',function(){
