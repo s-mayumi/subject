@@ -1,0 +1,43 @@
+ボタン(INPUTタグのボタン)がクリックされたタイミングでJavaScriptを実行したいことがあります。
+INPUTタグのOnClick属性にJavaScriptを記述することで、ボタンクリック時にJavaScriptを実行できます。
+
+<input type="button" value="(ボタンのキャプション)" onclick="(実行するJavaScriptのコード)"/>
+∴jQueryを仕様する場合は「onclick」は使用しない
+
+参考：https://www.ipentec.com/document/document.aspx?page=javascript-exec-javascript-on-button-click
+
+----------
+
+.each：取得してきた値に対して .each 内の同じ処理を行う = 選択時にval値を取得する時点では不要（.on('click')で実現可能だから）
+===：絶対一致（=== 0 は文字列をはじく）
+
+「var output = $('.js-output');」はオブジェクトを取得できるが、「var outputVal = $('.js-output').val();」は0のみ取得される
+だから、if( outputVal == 0 )が常に活きてしまう
+↓ 解決方法
+・ifの中で上書きする
+・ifの前に0を文字列化してしまう
+
+----------
+
+関数：複数の処理のまとまり、まずは定義される→呼び出された時に実行
+function 関数名 ({
+  //処理したいコード
+})
+
+即時関数：関数定義がロードされた瞬間に即時に実行
+(function(仮引数, ...{
+  //即時に実行、処理したいコード
+})()
+
+readyイベント関数：jQueryで実装、DOMのロード後に事項
+$(function(){
+  //DOMロード後に実行、処理したいコード
+});
+
+グローバル変数
+ローカル変数
+
+✕ +を押した時に
+◯ 入力した時→+が押してあるかどうか
+→Y→ outputVal = 0
+→N→ 通常処理
