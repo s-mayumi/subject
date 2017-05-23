@@ -1,0 +1,76 @@
+/*--------------------------------------
+  Common-Setting
+---------------------------------------*/
+
+html {
+  font-size: 62.5%;
+}
+body, input, button, select, textarea {
+  font-family: $font-gothic;
+}
+body {
+  color: $color-font;
+  text-align: left;
+  line-height:1.7;
+  font-size: 1.4rem;
+
+  -ms-text-size-adjust: 100%;  // デバイスの向きによって文字サイズが変更されないようにする
+  -webkit-text-size-adjust: 100%;  // デバイスの向きによって文字サイズが変更されないようにする
+
+  word-wrap : break-word;
+  overflow-wrap : break-word;
+
+  -webkit-font-smoothing: antialiased; //Safariのフォントのレンダリング調整
+  -moz-osx-font-smoothing: grayscale; //Firefoxのフォントのレンダリング調整
+
+}
+@media print, screen and (min-width: $screen-lg-min) {
+  body { min-width: 640px;}
+}
+h1 , h2 , h3 , h4 , h5 , h6 {
+  line-height : 1.4;  // 見出し系はパラつくので見えるので行間を少し狭める
+}
+h1 {
+  font-weight: normal;
+}
+// フォーム要素のデフォルトスタイルを削除
+input, button, textarea, select {
+    // -webkit-appearance: none;  // iOSのSafariはクセが強いのでデフォルトで削除
+    // -moz-appearance: none;
+    // appearance: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+}
+img {
+  vertical-align: top;  // imgで意図しないマージンがつかないように設定
+  max-width: 100%;
+  height: auto;
+}
+strong { font-weight: bold; }
+em { font-style: italic;}
+a {
+    text-decoration: none;
+    color: $color-link;
+    transition: opacity .3s;
+}
+a,
+a:focus,
+a img {
+    outline: none;
+}
+// 画面サイズが大きい(PC想定)の時のみホバーを適用
+@media print, screen and (min-width: $screen-lg-min) {
+  a:hover { opacity: 0.6;}
+}
+// デフォルトのボックスモデルをボーダーボックスに変更
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}

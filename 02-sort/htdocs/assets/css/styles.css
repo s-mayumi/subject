@@ -1,0 +1,153 @@
+@charset 'UTF-8';
+/*========================================*/
+/* Foundation
+/*========================================*/
+/*--------------------------------------
+  Reset Css
+--------------------------------------*/
+html , body , div , span , applet , object , iframe , h1 , h2 , h3 , h4 , h5 , h6 , p , blockquote , pre , a , abbr , acronym , address , big , cite , code , del , dfn , em , img , ins , kbd , q , s , samp , small , strike , strong , sub , sup , tt , var , b , u , i , center , dl , dt , dd , ol , ul , li , fieldset , form , label , legend , table , caption , tbody , tfoot , thead , tr , th , td , article , aside , canvas , details , embed , figure , figcaption , footer , header , hgroup , menu , nav , output , ruby , section , summary , time , mark , audio , video {
+  font-size : 100%;
+  margin : 0;
+  padding : 0;
+  vertical-align : baseline; 
+  border : 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article , aside , details , figcaption , figure , footer , header , hgroup , menu , nav , section {
+  display : block;
+}
+
+ol , ul {
+  list-style : none;
+}
+
+table {
+  border-spacing : 0; 
+  border-collapse : collapse;
+}
+
+blockquote , q {
+  quotes : none;
+}
+
+blockquote:before , blockquote:after , q:before , q:after {
+  content : none;
+}
+
+/*--------------------------------------
+  Common-Setting
+---------------------------------------*/
+html {
+  font-size : 62.5%;
+}
+
+body , input , button , select , textarea {
+  font-family : 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', Osaka, Verdana, sans-serif;
+}
+
+body {
+  font-size : 1.4rem;
+  line-height : 1.7;
+  text-align : left;
+  word-wrap : break-word;
+  color : #000;
+
+      -ms-text-size-adjust : 100%;
+  -webkit-text-size-adjust : 100%;
+  overflow-wrap : break-word;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+}
+
+@media print, screen and (min-width: 1200px) {
+  body {
+    min-width : 640px;
+  }
+}
+
+h1 , h2 , h3 , h4 , h5 , h6 {
+  line-height : 1.4;
+}
+
+h1 {
+  font-weight : normal;
+}
+
+input , button , textarea , select {
+  margin : 0;
+  padding : 0;
+  border : none;
+  border-radius : 0;
+  outline : none; 
+  background : none;
+}
+
+img {
+  max-width : 100%;
+  height : auto; 
+  vertical-align : top;
+}
+
+strong {
+  font-weight : bold;
+}
+
+em {
+  font-style : italic;
+}
+
+a {
+  -webkit-transition : opacity .3s;
+          transition : opacity .3s; 
+  text-decoration : none;
+  color : #000;
+}
+
+a , a:focus , a img {
+  outline : none;
+}
+
+@media print, screen and (min-width: 1200px) {
+  a:hover {
+    opacity : .6;
+  }
+}
+
+* {
+  box-sizing : border-box;
+}
+
+*:before , *:after {
+  box-sizing : border-box;
+}
+
+/*========================================*/
+/* Layout
+/*========================================*/
+/*========================================*/
+/*  Module
+/*========================================*/
+/*========================================*/
+/*  Page
+/*========================================*/
+/*--------------------------------------
+  Calculator Css
+--------------------------------------*/
+main {
+  max-width : 640px;
+  padding : 10px;
+}
+
+.sort-box {
+  width : 150px;
+  padding : 10px; 
+  text-align : center;
+  border : 1px solid #ddd;
+}
+
+.sort-btn {
+  width : 150px;
+  padding : 10px; 
+  text-align : center;
+}
